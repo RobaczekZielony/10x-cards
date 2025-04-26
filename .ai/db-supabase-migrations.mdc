@@ -13,9 +13,11 @@ This project uses the migrations provided by the Supabase CLI.
 
 Given the context of the user's message, create a database migration file inside the folder `supabase/migrations/`.
 
+You MUST use the current date and time. Check the internet for the current date and time.
+
 The file MUST following this naming convention:
 
-The file MUST be named in the format `YYYYMMDDHHmmssnnn_short_description.sql` with proper casing for months, minutes, and seconds in UTC time:
+The file MUST be named in the format `YYYYMMDDHHmmss_short_description.sql` with proper casing for months, minutes, and seconds in UTC time:
 
 1. `YYYY` - Four digits for the year (e.g., `2024`).
 2. `MM` - Two digits for the month (01 to 12).
@@ -23,17 +25,13 @@ The file MUST be named in the format `YYYYMMDDHHmmssnnn_short_description.sql` w
 4. `HH` - Two digits for the hour in 24-hour format (00 to 23).
 5. `mm` - Two digits for the minute (00 to 59).
 6. `ss` - Two digits for the second (00 to 59).
-6. `nnn` - Three digits for consecutive number ensuring that the migrations have the proper execution order 
-8. Add an appropriate description for the migration.
+7. Add an appropriate description for the migration.
 
 For example:
 
 ```
-20240906123045001_create_users.sql
-20240906123045002_create_profiles.sql
-20240906123045003_create_purchases.sql
+20240906123045_create_profiles.sql
 ```
-
 
 ## SQL Guidelines
 
@@ -41,6 +39,7 @@ Write Postgres-compatible SQL code for Supabase migration files that:
 
 - Includes a header comment with metadata about the migration, such as the purpose, affected tables/columns, and any special considerations.
 - Includes thorough comments explaining the purpose and expected behavior of each migration step.
+- Make sure you create SQL statements in the right order (tables with foreign keys should be created after tables without such keys)
 - Write all SQL in lowercase.
 - Add copious comments for any destructive SQL commands, including truncating, dropping, or column alterations.
 - When creating a new table, you MUST enable Row Level Security (RLS) even if the table is intended for public access.
@@ -49,5 +48,6 @@ Write Postgres-compatible SQL code for Supabase migration files that:
   - If the table  is intended for public access the policy can simply return `true`.
   - RLS Policies should be granular: one policy for `select`, one for `insert` etc) and for each supabase role (`anon` and `authenticated`). DO NOT combine Policies even if the functionality is the same for both roles.
   - Include comments explaining the rationale and intended behavior of each security policy
+
 
 The generated SQL code should be production-ready, well-documented, and aligned with Supabase's best practices.
