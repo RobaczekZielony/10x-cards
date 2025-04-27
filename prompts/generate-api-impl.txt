@@ -1,0 +1,106 @@
+You are an experienced software architect tasked with creating a comprehensive implementation plan for a REST API endpoint. Your plan will guide the development team in successfully and correctly implementing this endpoint.
+
+Before we begin, please familiarize yourself with the following information:
+
+1. Route API specification:
+<route_api_specification>
+{{route-api-specification}} <- copy the endpoint description from api-plan.md
+</route_api_specification>
+
+2. Related database resources:
+<related_db_resources>
+{{db-resources}} <- copy the tables and relationships from db-plan.md
+</related_db_resources>
+
+3. Type definitions:
+<type_definitions>
+{{types}} <- convert to references for type definitions (e.g., @types)
+</type_definitions>
+
+4. Tech stack:
+<tech_stack>
+{{tech-stack}} <- convert to reference the @tech-stack.md
+</tech_stack>
+
+5. Implementation rules:
+<implementation_rules>
+{{backend-rules}} <- convert to references to the Backend Rules for AI (e.g., @shared.mdc, @backend.mdc, @astro.mdc)
+</implementation_rules>
+
+Your task is to create a comprehensive implementation plan for the REST API endpoint. Before delivering the final plan, use the <analysis> markers to analyze the information and outline your approach. In this analysis, ensure that you:
+
+1. Summarize the key points of the API specification.
+2. List the required and optional parameters from the API specification.
+3. List the necessary DTO types and Command Models.
+4. Consider how to extract logic into a service (existing or new if not present).
+5. Plan input data validation according to the API endpoint specification, database resources, and implementation rules.
+6. Define how to log errors in an error log table (if applicable).
+7. Identify potential security risks based on the API specification and the technology stack.
+8. Outline potential error scenarios and their corresponding status codes.
+
+After completing the analysis, create a detailed implementation plan in markdown format. The plan should include the following sections:
+
+1. Endpoint Overview
+2. Request Details
+3. Response Details
+4. Data Flow
+5. Security Considerations
+6. Error Handling
+7. Performance
+8. Implementation Steps
+
+Throughout the plan, make sure to:
+- Use the correct API status codes:
+  - 200 for successful retrieval
+  - 201 for successful creation
+  - 400 for invalid input data
+  - 401 for unauthorized access
+  - 404 for resource not found
+  - 500 for server-side errors
+- Adapt to the provided technology stack
+- Follow the given implementation rules
+
+The final output should consist solely of the implementation plan in markdown format. Here is an example of what the output should look like:
+
+```markdown
+# API Endpoint Implementation Plan: [Endpoint Name]
+
+## 1. Endpoint Overview
+[A brief description of the endpoint's purpose and functionality]
+
+## 2. Request Details
+- HTTP Method: [GET/POST/PUT/DELETE]
+- URL Pattern: [URL pattern]
+- Parameters:
+  - Required: [List of required parameters]
+  - Optional: [List of optional parameters]
+- Request Body: [Request payload structure, if applicable]
+
+## 3. Utilized Types
+[DTOs and Command Models required for implementation]
+
+## 4. Response Details
+[Expected response structure and status codes]
+
+## 5. Data Flow
+[Description of the data flow, including interactions with external services or databases]
+
+## 6. Security Considerations
+[Details of authentication, authorization, and data validation]
+
+## 7. Error Handling
+[A list of potential errors and how they are handled]
+
+## 8. Performance Considerations
+[Potential bottlenecks and optimization strategies]
+
+## 9. Implementation Steps
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+...
+```
+
+The final output should consist solely of the implementation plan in markdown format and should not duplicate or repeat any work done during the analysis section.
+
+Remember to save your implementation plan as .ai/view-implementation-plan.md. Make sure that the plan is detailed, clear, and provides comprehensive guidance for the development team.

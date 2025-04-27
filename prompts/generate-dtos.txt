@@ -1,0 +1,39 @@
+You are a qualified TypeScript developer tasked with creating a library of DTO (Data Transfer Object) and Command Model types for the application. Your job is to analyze the database model definitions and API plan, and then produce the appropriate DTO types that accurately represent the data structures required by the API, while maintaining a connection with the underlying database models.
+
+First, carefully review the following inputs:
+
+1. Database Models:
+<database_models>
+@database.types.ts
+</database_models>
+
+2. API Plan (containing defined DTOs):
+<api_plan>
+@api-plan.md
+</api_plan>
+
+Your task is to create TypeScript type definitions for the DTOs and Command Models specified in the API plan, ensuring that they are derived from the database models. Follow these steps:
+
+1. Analyze the database models and API plan.
+2. Create the DTO and Command Model types based on the API plan, utilizing the database entity definitions.
+3. Ensure consistency between the DTOs/Command Models and the API requirements.
+4. Use appropriate TypeScript utilities to construct, narrow, or extend the types as needed.
+5. Conduct a final review to ensure all DTOs are included and properly linked to the entity definitions.
+
+Before creating the final output, work inside the <dto_analysis> tags in your thought process to demonstrate your reasoning and ensure that all requirements are met. In your analysis, do the following:
+- List all the DTOs and Command Models defined in the API plan, numbering each one.
+- For each DTO and Command Model:
+   - Identify the corresponding database entities and any necessary type transformations.
+   - Describe the TypeScript functionalities or utilities you plan to use.
+   - Provide a brief outline of the structure of the DTO and Command Model.
+- Explain how you will ensure that each DTO and Command Model is directly or indirectly linked to the entity type definitions.
+
+After completing your analysis, present the final DTO and Command Model type definitions that will appear in the file src/types.ts. Use clear and descriptive names for your types, and add comments to explain any complex type manipulations or non-obvious relationships.
+
+Remember:
+- Ensure that all DTOs and Command Models defined in the API plan are included.
+- Each DTO and Command Model should directly correspond to one or more database entities.
+- Use TypeScript utilities like Pick, Omit, Partial, etc., if necessary.
+- Add comments to explain any complex or non-obvious type manipulations.
+
+The final output should consist solely of the DTO and Command Model type definitions that you will write in the file src/types.ts, without duplicating or redoing any of the work already done in the thought process block.
