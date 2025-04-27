@@ -16,7 +16,7 @@ This table is managed by **Supabase Auth**.
 
 - id: UUID PRIMARY KEY
 - front_text: TEXT NOT NULL CHECK (char_length(front_text) <= 200)
-- back: TEXT NOT NULL CHECK (char_length(back) <= 500)
+- back_text: TEXT NOT NULL CHECK (char_length(back) <= 500)
 - source: ENUM ('ai-full', 'ai-edited', 'manual'))
 - created_at: TIMESTAMPTZ NOT NULL DEFAULT now()
 - updated_at: TIMESTAMPTZ NOT NULL DEFAULT now()
@@ -30,7 +30,7 @@ This table is managed by **Supabase Auth**.
 - id: UUID PRIMARY KEY
 - user_id: UUID NOT NULL REFERENCES users(id)
 - model: TEXT NOT NULL
-- attempt_count: INTEGER NOT NULL
+- flashcards_count: INTEGER NOT NULL
 - accepted_unedited_count: INTEGER NULLABLE
 - accepted_edited_count: INTEGER NULLABLE
 - duration: INTEGER NOT NULL

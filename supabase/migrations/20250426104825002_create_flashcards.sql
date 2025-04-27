@@ -9,7 +9,7 @@ create type flashcard_source as enum ('ai-full', 'ai-edited', 'manual');
 create table if not exists flashcards (
   id uuid primary key default gen_random_uuid(), 
   front_text text not null check (char_length(front_text) <= 200), 
-  back text not null check (char_length(back) <= 500), 
+  back_text text not null check (char_length(back_text) <= 500), 
   source flashcard_source not null, 
   created_at timestamptz not null default now(), 
   updated_at timestamptz not null default now(), 
@@ -24,7 +24,7 @@ create table if not exists flashcards (
 comment on table public.flashcards is 'Stores user and AI generated flashcards';
 comment on column public.flashcards.id is 'Unique identifier for flashcard';
 comment on column public.flashcards.front_text is 'Question or prompt displayed on front of card (max 200 chars)';
-comment on column public.flashcards.back is 'Answer or information displayed on back of card (max 500 chars)';
+comment on column public.flashcards.back_text is 'Answer or information displayed on back of card (max 500 chars)';
 comment on column public.flashcards.source is 'Indicates how flashcard was created: ai-full (unedited AI generation), ai-edited (edited AI generation), or manual';
 comment on column public.flashcards.created_at is 'Timestamp when flashcard was created';
 comment on column public.flashcards.updated_at is 'Timestamp when flashcard was last updated';
