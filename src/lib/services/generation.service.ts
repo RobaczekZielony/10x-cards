@@ -37,8 +37,13 @@ export class GenerationService {
     // For now, return mock data with a preview of the source text
     return [
       {
-        front_text: `Question about: ${sourceText.substring(0, 50)}...`,
-        back_text: `Answer containing: ${sourceText.substring(0, 50)}...`,
+        front_text: `Q: ${sourceText.substring(0, 25)}...`,
+        back_text: `A: ${sourceText.substring(0, 50)}...`,
+        source: "ai-full",
+      },
+      {
+        front_text: `Q: ${sourceText.substring(50, 75)}...`,
+        back_text: `A: ${sourceText.substring(50, 100)}...`,
         source: "ai-full",
       },
     ];

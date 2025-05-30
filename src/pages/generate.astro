@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import FlashcardGenerationView from "@/components/FlashcardGenerationView";
+---
+
+<Layout title="Generate Flashcards">
+  <div
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-200 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-800 py-12 px-4"
+  >
+    <FlashcardGenerationView client:load />
+  </div>
+</Layout>
